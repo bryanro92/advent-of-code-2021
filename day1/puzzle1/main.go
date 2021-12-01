@@ -17,7 +17,7 @@ func main() {
 	s := bufio.NewScanner(f)
 	for s.Scan() {
 		if i == 0 {
-			p, _ = strconv.Atoi(s.Text())
+			p, _ = strconv.Atoi(s.Text()) // yeet
 			i++
 			continue
 		}

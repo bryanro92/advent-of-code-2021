@@ -10,25 +10,28 @@ import (
 func main() {
 	t := 0
 	a := []int{}
+
 	f, err := os.Open("input.txt")
 	if err != nil {
 		panic(err)
 	}
 	defer f.Close()
+
 	s := bufio.NewScanner(f)
 	for s.Scan() {
-		v, _ := strconv.Atoi(s.Text())
+		v, _ := strconv.Atoi(s.Text()) // yeet
 		a = append(a, v)
 	}
-	for i, v := range a {
-		if i == 0 {
+
+	for i, _ := range a {
+		if i == 0 { // skip first
 			continue
 		}
-		if i+2 >= len(a) {
+		if i+2 >= len(a) { // skip last three
 			continue
 		}
-		s1 := a[i-1] + v + a[i+1] //previous window
-		s2 := v + a[i+1] + a[i+2] //current window
+		s1 := a[i-1] + a[i] + a[i+1] // previous window
+		s2 := a[i] + a[i+1] + a[i+2] // current window
 		if s2 > s1 {
 			t++
 		}
