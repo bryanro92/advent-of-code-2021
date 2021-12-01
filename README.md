@@ -1,1 +1,1 @@
-daily challenges from (adventofcode.com)[https://adventofcode.com/2021]
+daily challenges from [adventofcode.com](https://adventofcode.com/2021)
