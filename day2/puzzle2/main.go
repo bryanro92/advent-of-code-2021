@@ -42,15 +42,16 @@ func main() {
 	}
 
 	for _, v := range instructions {
-		if strings.EqualFold(v.instruction, up) {
+		switch v.instruction {
+		case up:
 			aim = aim - v.value
-		}
-		if strings.EqualFold(v.instruction, down) {
+		case down:
 			aim = aim + v.value
-		}
-		if strings.EqualFold(v.instruction, forward) {
+		case forward:
 			distance = distance + v.value
 			depth = depth + (aim * v.value)
+		default:
+			panic("ahhhh")
 		}
 	}
 	fmt.Println("depth:", depth)
