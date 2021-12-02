@@ -18,6 +18,7 @@ func main() {
 	defer f.Close()
 
 	s := bufio.NewScanner(f)
+
 	for s.Scan() {
 		v, _ := strconv.Atoi(s.Text()) // yeet
 		a = append(a, v)
